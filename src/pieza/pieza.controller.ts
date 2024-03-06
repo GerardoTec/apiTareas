@@ -48,7 +48,6 @@ export class PiezasController{
         @Param('filename') filename: string,
         @Res() response
     ) {
-        console.log(idProspecto,filename)
         const pathFile = await this.piezasService.getDocument(idProspecto, filename);
         const type = mime.lookup(pathFile);
         if (!response.getHeader('content-type')) response.setHeader('Content-Type', type);

@@ -1,4 +1,5 @@
-import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
+import { Tasks } from 'src/tasks/entities/task.entity';
+import {Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn} from 'typeorm';
 
 @Entity({name:'users'})
 export class UserTask {
@@ -30,5 +31,7 @@ export class UserTask {
     @Column({default: 'ACTIVO'})
     estatus:string;
 
- 
+    @OneToMany(type => Tasks, task => task.id)
+    @JoinColumn({ name: 'task_id' })
+    tasks: Tasks[];
 }

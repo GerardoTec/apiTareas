@@ -47,15 +47,12 @@ export function eliminarFile(filename: string) {
         const pathToDelete = path.join(__dirname, '../', filename);
         fs.unlinkSync(pathToDelete);
     } catch (err) {
-        console.log(err);
     }
 }
 
 export function getPathFile(id: number, filename: string) {
-    console.log(id,filename)
     return new Promise<string>((resolve, reject) => {
         const filePath = path.resolve(__dirname, `../uploads/${id}/${filename}`);
-        console.log(filePath)
         if (!fs.existsSync(filePath)) return reject('El archivo no existe');
         resolve(filePath);
     });

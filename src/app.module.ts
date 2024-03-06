@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { PiezasModule } from './pieza/pieza.module';
 import { ArchivosModule } from './archivos/archivos.module';
 import { UserTaskModule } from './usersTasks/userTasks.module';
+import { TaskModule } from './tasks/task.module';
 
 @Module({
   imports: [
@@ -24,7 +25,8 @@ import { UserTaskModule } from './usersTasks/userTasks.module';
     AuthModule,
     PiezasModule,
     ArchivosModule,
-    UserTaskModule
+    UserTaskModule,
+    TaskModule
   ],
   controllers: [AppController],
   providers: [AppService],

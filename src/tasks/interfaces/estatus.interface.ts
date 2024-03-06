@@ -1,0 +1,6 @@
+export enum ValidStatus{
+    EN_CURSO= 'EN CURSO',
+    PENDIENTE = 'PENDIENTE',
+    FINALIZADA = 'FINALIZADA',
+    ELIMINADA = 'ELIMINADA'
+}
